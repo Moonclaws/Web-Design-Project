@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/more.css">
+  <title>MY WEBSITE</title>
+<nav class="navdiv">
+  <hr>
+<header>
+  <img class="about"  src="pic/Gearmenu.png" alt="Gearmenu" >
+<ul>
+  <li><a href="Selling.html">HOME</a></li>
+  <li><a href="about.html">ABOUT</a></li>
+  <li> <a href="more.html">CONTACT</a></li>
+</ul>
+</header>
+<hr>
+</nav>
+</head>
+<body>
+
+  
+      
+    <nav class="gif">
+
+      <div class="contact-social-container">
+        
+        <div class="contact-box">
+          <h2>SEND US A MESSAGE</h2>
+          <form action="https://formspree.io/f/xqarlwrr" method="POST">
+              <input type="text" name="name" placeholder="Your Name" required>
+              <input type="email" name="email" placeholder="Your Email" required>
+              <textarea name="message" placeholder="Your Message" required></textarea>
+              <button type="submit">Send Message</button>
+          </form>
+        </div>
+
+        <div class="social-links">
+            <h1>CONNECT WITH US!</h1>
+            <br>
+            <br>
+            <a class="fblogin" href="https://www.facebook.com">
+                <img src="pic/Facebook_Logo_2023.png" alt="fb" class="fb" height="90px" width="85px"> FOLLOW US ON FACEBOOK
+            </a>
+            <br>
+            <br>
+            <a class="Instalogin" href="https://www.instagram.com">
+                <img src="pic/insta.png" alt="instagram" class="insta" height="90px" width="85px"> FOLLOW US ON INSTAGRAM
+            </a>
+            <br>
+            <br>
+            <a class="Xlogin" href="https://x.com">
+                <img src="pic/Twitter.png" alt="X" class="X" height="90px" width="85px"> FOLLOW US ON X
+            </a>
+            <br>
+            <br>
+            <a class="Tiktoklogin" href="https://www.tiktok.com">
+                <img src="pic/tiktok.png" alt="tiktok" class="Tiktok" height="90px" width="85px"> FOLLOW US ON TIKTOK
+            </a>
+            <br>
+            <br>
+            <a class="Ytlogin" href="https://www.youtube.com">
+                <img src="pic/Yt.png" alt="YT" class="YT" height="90px" width="85px"> FOLLOW US ON YOUTUBE
+            </a>           
+            <br>
+          </div>
+        </div>       
+    </nav>
+
+<div class="overlay" id="overlay">
+    <div class="popup" id="popupBox">
+        <h2>RATE US!</h2>
+
+        <div class="stars" id="stars">
+            <span data-star="1">★</span>
+            <span data-star="2">★</span>
+            <span data-star="3">★</span>
+            <span data-star="4">★</span>
+            <span data-star="5">★</span>
+        </div>
+
+        <div class="thanks-box" id="thanksMessage">
+            ✔️ Thank you for your rating!
+        </div>
+    </div>
+</div>
+
+    
+  <footer class="footer">
+    <center>
+    <img src="pic/law.png" alt="law" width="35px">
+</center>
+    <p class="law">&#169; WEB DESIGN</p>
+  </footer>
+
+  <script>
+    const stars = document.querySelectorAll('.stars span');
+    const thanksBox = document.getElementById('thanksMessage');
+    const overlay = document.getElementById('overlay');
+
+    stars.forEach(star => {
+        star.addEventListener('click', () => {
+            let rating = star.getAttribute("data-star");
+
+            stars.forEach(s => {
+                if (s.getAttribute("data-star") <= rating) {
+                    s.classList.add("selected");
+                } else {
+                    s.classList.remove("selected");
+                }
+            });
+
+            thanksBox.style.display = "block";
+
+            setTimeout(() => {
+                overlay.style.display = "none";
+            }, 1500);
+        });
+    });
+</script>
+
+
+</body>
+</html>
